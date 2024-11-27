@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Calculadora de Investimentos</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <aside class="menu">
+            <h2>Investimentos</h2>
+            <ul>
+                <li><a href="#" class="active">Calculadora</a></li>
+                <li><a href="#">Relatório</a></li>
+            </ul>
+        </aside>
+        <main class="content">
+            <header>
+                <h1>Calculadora de Investimentos</h1>
+            </header>
+            <form id="investment-form">
+                <div class="form-group">
+                    <label for="initial-investment">Investimento Inicial (R$):</label>
+                    <input type="number" id="initial-investment" placeholder="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="monthly-investment">Aporte Mensal (R$):</label>
+                    <input type="number" id="monthly-investment" placeholder="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="interest-rate">Taxa de Juros (% ao ano):</label>
+                    <input type="number" id="interest-rate" step="0.01" placeholder="0" required>
+                </div>
+                <div class="form-group">
+                    <label for="years">Duração (anos):</label>
+                    <input type="number" id="years" placeholder="0" required>
+                </div>
+                <div class="form-actions">
+                    <button type="button" id="calculate-btn">Calcular</button>
+                    <button type="button" id="download-pdf">Baixar Relatório (PDF)</button>
+                </div>
+            </form>
+            <div id="results" class="results">
+                <h2>Resultados</h2>
+                <p id="total-invested"></p>
+                <p id="total-return"></p>
+                <p id="final-balance"></p>
+                <div id="monthly-results">
+                    <h3>Resultados Mensais</h3>
+                    <ul id="monthly-list"></ul>
+                </div>
+                <canvas id="investment-chart"></canvas>
+            </div>
+        </main>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script>
+    <script src="script.js"></script>
+</body>
+</html>
